@@ -1,0 +1,47 @@
+{
+  "name": "NYT-React-Search",
+  "version": "1.0.0",
+  "description": "NYT React Search is a react-based app, that replicates the NYT.COM article search functionality. It uses use Node, Express, REACT, and MongoDB and allows users to search for, and save  articles they like.",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack -w & node server",
+    "start": "node server",
+    "build": "webpack -w"
+  },
+  "author": "Hadi Yousufi",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.12.0",
+    "body-parser": "^1.17.0",
+    "express": "^4.15.0",
+    "mongoose": "^4.8.5",
+    "morgan": "^1.8.1",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-router": "^3.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.13",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "webpack": "^1.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadicodes/NYT-React-Search.git"
+  },
+  "keywords": [
+    "express",
+    "mongoose",
+    "body-parser",
+    "axios",
+    "request",
+    "react"
+  ],
+  "bugs": {
+    "url": "https://github.com/hadicodes/NYT-React-Searchissues"
+  },
+  "homepage": "https://github.com/hadicodes/NYT-React-Search#readme"
+}
