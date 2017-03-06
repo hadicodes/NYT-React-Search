@@ -1,9 +1,9 @@
 //React Main dependencies
 var React = require("react");
-var ReactDom = require("react-dom");
+var ReactDOM = require("react-dom");
 
 //imports  Main component
-var Main = require("")
+var Main = require("./components/Main");
 
 
 // Grabs the Routes
