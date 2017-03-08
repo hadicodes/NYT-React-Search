@@ -29,12 +29,7 @@ getInitialState: function() {
       
       
       {/*Search panel*/}
-      <Search />
-      
-    
-      
-      
-      
+      {this.props.children}
       
       </div>
     )
