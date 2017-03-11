@@ -30,16 +30,16 @@ module.exports = (
 
   // The high level component is the Router component
   <Router history={hashHistory}>
-    
     <Route path="/" component={Main}>
       {/* If user selects Search then show the appropriate component*/}
       <Route path="Search" component={Search} >
-        {/* Search has its own Grandchildren options */}
+        {/* Search has its own Grandchildren ie. Query and Results  */}
         <Route path="Query" component={Query} />
         <Route path="Results" component={Results} />
       </Route>
       {/* If user selects Saved then show the appropriate component*/}
       <Route path="Saved" component={Saved} />
+      <IndexRoute component={Search} />
     </Route>
   </Router>
 );

@@ -3,8 +3,7 @@ var React = require("react");
 var helpers = require("../utils/helper");
 
 var Query = React.createClass({
-
- getInitialState: function(){
+getInitialState: function(){
         return {
             queryTerm: "Mike Tyson",
             "startYear": "2008",
@@ -12,15 +11,9 @@ var Query = React.createClass({
             "results": {}
         };
     },
-
-
   render: function() {
-    console.log("query", this.state.queryTerm);
-    console.log("start", this.state.startYear);
-    console.log("end", this.state.endYear);
-
     return (
-      <div className="main-container">
+      <div className="container">
         <form>
             <div className="form-group">
                 <label htmlFor="formGroupExampleInput">Search Topic</label>
@@ -34,7 +27,7 @@ var Query = React.createClass({
                 <label htmlFor="formGroupExampleInput2">End Year</label>
                 <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="" />
             </div>
-              <button type="submit" className="btn btn-primary btn-lg">Search</button>
+              <button type="submit" className="btn btn-success">Search</button>
         </form>
       </div>
     );
