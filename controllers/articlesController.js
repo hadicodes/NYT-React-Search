@@ -1,7 +1,3 @@
-// Requiring  express dependency
-var express = require("express");
-// express router
-var app = express.Router();
 // imports the Article model
 var Article = require("../models/Article.js");
 
@@ -18,14 +14,11 @@ module.exports = function (app) {
           }
         });
     });
-};
-
-
 //Save ie. post an article to the db 
   app.post('/api/saved', function (req, res) {
 //Create and Save the article input to the db
     Article.create(req.body, function(err, article) {
-        if (error) {
+        if (err) {
             console.log(err);
         } else {
             console.log(article);
@@ -47,3 +40,5 @@ app.delete('/api/saved/:id', function (req, res) {
 app.get("*", function(req, res) {
     res.sendFile("index.html");
 });
+
+}

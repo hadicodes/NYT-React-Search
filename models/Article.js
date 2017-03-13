@@ -4,25 +4,21 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 // Create an article schematic to define the rules of the articles beings
-// scraped.
 var ArticleSchema = new Schema({
-  // Title is a required field and also unique
+  // Title is a required field 
   title: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
-  // articleSnippet is a required string and also unique to prevent duplicates
+  // date is the published date
   date: {
     type: Date,
     required: true
   },
-  // link is a required string and also unique to prevent duplicates
+  // link is a required string 
   url: {
     type: String,
-    required: true,
-    unique: true
-  }
+    required: true  }
 });
 
 // Create the Article model with the ArticleSchema

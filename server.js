@@ -20,8 +20,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("./public"));
 
 // Require the routes from articlescontroller.js
-var routes = require("./controllers/articlesController.js");
-app.use('/', routes);
+require("./controllers/articlesController.js")(app);
 
 // -------------------------------------------------
 

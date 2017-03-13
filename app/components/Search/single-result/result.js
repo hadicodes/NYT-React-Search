@@ -15,8 +15,7 @@ var Result = React.createClass({
             url: this.state.url,
             date: this.state.publishedDate
         };
-        console.log(article);
-        // helpers.addSavedArticles(article);
+        helpers.addSavedArticles(article);
     },
     componentDidMount: function(){
         this.setState({url:this.props.url, title:this.props.title, publishedDate:this.props.publishedDate});

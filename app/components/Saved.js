@@ -14,7 +14,6 @@ var Saved = React.createClass({
                         <h4 className="card-title">
                             Comp: Results Article retrieved
                         </h4>
-                        {/*<a href="#" className="btn btn-primary">Save</a>*/}
                     </div>
                 </div>
 

@@ -18,7 +18,6 @@ var Results = React.createClass({
               {/*No results Message*/}
               {numberOfResults===0 && <p>Sorry it looks like there are not any NYT articles on your current search</p>}
               {this.props.results.map(function(element, index) {
-                console.log(element);
                 return (
                   <Result key={index} url={element.web_url} title={element.headline.main} publishedDate={element.pub_date}></Result>
                 );

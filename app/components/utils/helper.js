@@ -9,11 +9,9 @@ var APIKey = "28262d0f81b84ebf8794f94a1c0487d3";
 var helpers = {
     // Run Query
     runQuery: function (queryTerm, startYear, endYear) {
-        // console.log(queryTerm); console.log(startYear); console.log(endYear);
         var queryTerm = queryTerm.trim();
         var startYear = startYear.trim() + "0101";
         var endYear = endYear.trim() + "1231";
-       
 
         return axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json", 
            {
@@ -25,10 +23,8 @@ var helpers = {
                 }
             })
             .then(function (results) {
-                console.log("Axios Results", results.data.response);
                 return results.data.response;
             });
-
     },
 
     // retrieves saved articles from server
