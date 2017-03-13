@@ -1,16 +1,15 @@
 // Dependencies
 var React = require("react");
-// Includes its children: Query and Results
 var Query = require("./Search/Query");
 var Results = require("./Search/Results");
-//Helper which makes AJAX requests to the NYT API
+//helper for axios calls
 var helpers = require("./utils/helper");
 
 var Search = React.createClass({
     getInitialState: function () {
-        return {query: "", startYear: "", endYear: "", results: []};
+        return {results: []};
     },
-    // Query was made
+    // Query passed search info
     runSearch: function (query, startYear, endYear) {
         // Axios helper query
         helpers
@@ -21,18 +20,15 @@ var Search = React.createClass({
                 }
             }.bind(this));
     },
-    //Render Function
+    //Render Query and Results
     render: function () {
-        console.log("Rendering the Search Component");
         return (
             <div className="container">
-            <div className="row">
-                <div className="col-sm-12 col-md-4">
+                <div className="row">
                     <Query runSearch={this.runSearch}/>
                 </div>
-                <div className="col-sm-12 col-md-8">
+                <div className="row">
                     <Results results={this.state.results}/>
-                </div>
                 </div>
             </div>
         )

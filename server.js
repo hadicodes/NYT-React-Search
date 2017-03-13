@@ -24,8 +24,8 @@ require("./controllers/articlesController.js")(app);
 
 // -------------------------------------------------
 
-// MongoDB Configuration configuration (Change this URL to your own DB)
-mongoose.connect("mongodb://localhost/nytreact");
+// MongoDB Configuration  (Change this URL to your own DB)
+mongoose.connect("mongodb://heroku_r9j0591l:2kre4ch7t2bf7vtqp11ep0qupf@ds129090.mlab.com:29090/heroku_r9j0591l");
 var db = mongoose.connection;
 
 db.on("error", function(err) {

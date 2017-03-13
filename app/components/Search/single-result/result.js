@@ -15,7 +15,7 @@ var Result = React.createClass({
             url: this.state.url,
             date: this.state.publishedDate
         };
-        helpers.addSavedArticles(article);
+        helpers.addArticle(article);
     },
     componentDidMount: function(){
         this.setState({url:this.props.url, title:this.props.title, publishedDate:this.props.publishedDate});
@@ -23,8 +23,8 @@ var Result = React.createClass({
     render: function(){
         return (
             <div>
-                <button className="btn btn-primary btn-xs pull-right" onClick={this.handleSave}>Save</button>
-                <a href={this.state.url} target="_blank"><p>{this.state.title}</p></a>
+                <p><a href={this.state.url} target="_blank">{this.state.title}</a></p>
+                <button className="btn btn-primary" onClick={this.handleSave}>Save</button>
                 <hr />
             </div>
         );

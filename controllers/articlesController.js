@@ -28,7 +28,7 @@ module.exports = function (app) {
 
 // Delete a saved article
 app.delete('/api/saved/:id', function (req, res) {
-    Article.remove({id: req.params.id}, function(err) {
+    Article.remove({_id: req.params.id}, function(err) {
         if (err) {
             console.log(err);
         }

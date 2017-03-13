@@ -7,7 +7,6 @@ getInitialState: function(){
             query: "",
             "startYear": "",
             "endYear": "",
-            "results": {}
         };
     },
     // Event handler function on term change
@@ -47,8 +46,9 @@ getInitialState: function(){
                 <label htmlFor="end-year">End Year (YYYY)</label>
                 <input value={this.state.endYear} type="text" className="form-control" id="end-year" placeholder="" onChange={this.handleEndYear} required/>
             </div>
-              <button type="submit" className="btn btn-success">Search</button>
+            <button type="submit" className="btn btn-success">Search</button>
         </form>
+        <hr />
       </div>
     );
   }

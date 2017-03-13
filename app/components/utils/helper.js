@@ -6,20 +6,20 @@ var axios = require("axios");
 var APIKey = "28262d0f81b84ebf8794f94a1c0487d3";
 
 // Helper Functions
-var helpers = {
+var helper = {
     // Run Query
-    runQuery: function (queryTerm, startYear, endYear) {
-        var queryTerm = queryTerm.trim();
-        var startYear = startYear.trim() + "0101";
-        var endYear = endYear.trim() + "1231";
+    runQuery: function (query, startYear, endYear) {
+        var thequery = query.trim();
+        var thestartYear = startYear.trim() + "0101";
+        var theendYear = endYear.trim() + "1231";
 
         return axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json", 
            {
                 params: {
                     "api-key": APIKey,
-                    "q": queryTerm,
-                    "begin_date": startYear,
-                    "end_date": endYear
+                    "q": thequery,
+                    "begin_date": thestartYear,
+                    "end_date": theendYear
                 }
             })
             .then(function (results) {
@@ -31,16 +31,16 @@ var helpers = {
    getSavedArticles: function(){
        return axios.get('/api/saved');
    },
-   // adds articles to database
-   addSavedArticles: function(article){
-       return axios.post('/api/saved', article)
+   // adds article to database
+   addArticle: function(article){
+       return axios.post('/api/saved', article);
    },
-   //deletes articles from db
-   deleteSavedArticles: function(id){
+   //deletes article from db
+   deleteArticle: function(id){
        return axios.delete('/api/saved/'+id);
    }    
 
 };
 
-// export helpers to use elsewhere
-module.exports = helpers;
+// export helper to use elsewhere
+module.exports = helper;
