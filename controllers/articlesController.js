@@ -23,21 +23,14 @@ module.exports = function (app) {
 
 //Save ie. post an article to the db 
   app.post('/api/saved', function (req, res) {
-      var article = request.body;
-
-      var newArticle = {
-        title: req.body.title,
-        url: req.body.url,
-        date: req.body.date
-    };
 //Create and Save the article input to the db
-           Article.create(article, function(err, article) {
-            if (error) {
-              console.log(err);
-            } else {
-                res.send(article);
-            }
-        });
+    Article.create(req.body, function(err, article) {
+        if (error) {
+            console.log(err);
+        } else {
+            console.log(article);
+        }
+    });
     });
 
 // Delete a saved article

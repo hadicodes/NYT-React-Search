@@ -1,4 +1,5 @@
-// Include the axios package for performing HTTP requests (promise based alternative to request)
+// Include the axios package for performing HTTP requests (promise based
+// alternative to request)
 var axios = require("axios");
 
 //NYT Search  API
@@ -6,37 +7,44 @@ var APIKey = "28262d0f81b84ebf8794f94a1c0487d3";
 
 // Helper Functions
 var helpers = {
-
     // Run Query
-    runQuery: function(queryTerm, startYear, endYear) {
+    runQuery: function (queryTerm, startYear, endYear) {
+        // console.log(queryTerm); console.log(startYear); console.log(endYear);
+        var queryTerm = queryTerm.trim();
+        var startYear = startYear.trim() + "0101";
+        var endYear = endYear.trim() + "1231";
+       
 
-        console.log(queryTerm);
-        console.log(startYear);
-        console.log(endYear);
+        return axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json", 
+           {
+                params: {
+                    "api-key": APIKey,
+                    "q": queryTerm,
+                    "begin_date": startYear,
+                    "end_date": endYear
+                }
+            })
+            .then(function (results) {
+                console.log("Axios Results", results.data.response);
+                return results.data.response;
+            });
 
-        var fixedQueryTerm = queryTerm.trim();
-        var fixedStartYear = startYear.trim() + "0101";
-        var fixedEndYear = endYear.trim() + "1231";
+    },
 
-        // Print a log statement
-        console.log("Query is being run");
+    // retrieves saved articles from server
+   getSavedArticles: function(){
+       return axios.get('/api/saved');
+   },
+   // adds articles to database
+   addSavedArticles: function(article){
+       return axios.post('/api/saved', article)
+   },
+   //deletes articles from db
+   deleteSavedArticles: function(id){
+       return axios.delete('/api/saved/'+id);
+   }    
 
-        return axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json", {
-
-            params: {
-                "api-key": APIKey,
-                "q": fixedQueryTerm,
-                "begin_date": fixedStartYear,
-                "end_date": fixedEndYear
-            }
-        })
-        .then (function(results) {
-            console.log("Axios Results", results.data.response);
-            return results.data.response;
-        })
-
-    }
-}
+};
 
 // export helpers to use elsewhere
 module.exports = helpers;
