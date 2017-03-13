@@ -18,7 +18,7 @@ var SingleSaved = React.createClass({
     render: function(){
         return(
             <div>
-                <a href={this.props.url}><p>{this.props.title}</p></a>
+                <a href={this.props.url}><h4>{this.props.title}</h4></a>
                 <button className="btn btn-warning" onClick={this.handleDelete}>Delete</button>
                 <hr />
             </div>

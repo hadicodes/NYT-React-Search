@@ -15,9 +15,7 @@ var Search = React.createClass({
         helpers
             .runQuery(query, startYear, endYear)
             .then(function (data) {
-                if (data !== this.state.results) {
-                    this.setState({results: data.docs})
-                }
+                this.setState({results: data.docs})
             }.bind(this));
     },
     //Render Query and Results
